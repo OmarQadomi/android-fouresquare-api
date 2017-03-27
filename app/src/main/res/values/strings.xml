@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyPlacesApp</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="cant_login">Can\'t login</string>
+    <string name="login_canceled">Foursquare login has been canceled can\'t proceed</string>
+    <string name="login_denied">Foursquare login has been Denied can\'t proceed</string>
+    <string name="GPS_settings">GPS is settings</string>
+    <string name="do_you_want_enable_gps">GPS is not enabled. Do you want to go to settings menu?</string>
+    <string name="settings">Settings</string>
+    <string name="cancel">Cancel</string>
+</resources>

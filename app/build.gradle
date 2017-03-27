@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.example.myplacesapp.myplacesapp"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {
+            storeFile file("D:\\Android projects\\MyPlacesApp\\intixt_map_key_store.jks");
+                    storePassword("android");
+                    keyAlias "intixt_map_key_store";
+                    keyPassword "android";
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            multiDexEnabled true
+            minifyEnabled false
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            multiDexEnabled true
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.google.android.gms:play-services:10.0.1'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.google.android.gms:play-services-plus:9.4.0'
+    compile 'com.android.support:cardview-v7:25.1.0'
+    compile 'com.foursquare:foursquare-android-oauth:1.0.3'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    // retrofit, gson
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    testCompile 'junit:junit:4.12'
+}
